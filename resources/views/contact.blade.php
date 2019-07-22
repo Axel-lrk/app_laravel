@@ -3,7 +3,7 @@
 @section('title', 'Contact')
 
 @section('content')
-    <h1>Contact</h1>
+    <h1>@lang('Contact')</h1>
 
     <form method="POST" action="{{ route('contact') }}">
         @csrf

@@ -6,8 +6,15 @@ use Illuminate\Http\Request;
 
 class MessagesController extends Controller
 {
-    public function store()
+    public function store(Request $request)
     {
-        return 'Procesar el formulario';
+        request()->validate([
+            'name' => 'required',
+            'email' => ['required', 'email'],
+            'subject' => 'required',
+            'content' => 'required'
+        ]);
+
+        return 'Datos validados';
     }
 }
